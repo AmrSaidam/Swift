@@ -10,9 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var signinButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        prepareButtonDesign()
+       
+    // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,6 +25,19 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    private func prepareButtonDesign()
+    {
+        cancelButton.layer.cornerRadius = 5.0
+        signinButton.layer.cornerRadius = 5.0
+        let buttonTextColor = signinButton.titleLabel?.textColor;
+        
+        signinButton.layer.borderColor = buttonTextColor?.CGColor
+        signinButton.layer.borderWidth = 2
+        
+
+        
+    }
+    
 
 }
 

@@ -18,16 +18,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Image-1" translatesAutoresizingMaskIntoConstraints="NO" id="MXg-Wk-W1H">
-                                <rect key="frame" x="40" y="165" width="240" height="237"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="11266238_817373755015334_1647037403465423684_o" translatesAutoresizingMaskIntoConstraints="NO" id="BYh-sF-BNa">
+                                <rect key="frame" x="52" y="162" width="217" height="243"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="MXg-Wk-W1H" secondAttribute="trailing" constant="20" id="Q9I-CA-Cki"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="MXg-Wk-W1H" secondAttribute="bottom" constant="166" id="Wpd-p0-oaR"/>
-                            <constraint firstItem="MXg-Wk-W1H" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="20" id="qBd-I8-VvZ"/>
-                            <constraint firstItem="MXg-Wk-W1H" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="145" id="sxC-S1-PSa"/>
+                            <constraint firstItem="BYh-sF-BNa" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="142" id="48n-LD-5t7"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="BYh-sF-BNa" secondAttribute="bottom" constant="163" id="8LE-5P-Rm8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BYh-sF-BNa" secondAttribute="trailing" constant="31" id="SaO-iF-005"/>
+                            <constraint firstItem="BYh-sF-BNa" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="32" id="yuf-i5-ifJ"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -38,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Image-1" width="40" height="40"/>
+        <image name="11266238_817373755015334_1647037403465423684_o" width="903" height="960"/>
     </resources>
 </document>
