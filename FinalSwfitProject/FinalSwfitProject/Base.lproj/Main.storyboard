@@ -33,11 +33,6 @@
                                     <segue destination="YCM-pX-r6S" kind="presentation" id="8q7-k8-JA9"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" example@hotmail.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fIf-oB-AX8">
-                                <rect key="frame" x="40" y="269" width="240" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="spatial" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="PsC-4b-ttF">
                                 <rect key="frame" x="172" y="406" width="73" height="43"/>
                                 <color key="backgroundColor" red="0.73235176280000003" green="0.07294666843" blue="0.16866048729999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -46,9 +41,18 @@
                                 <state key="normal" title="Cancel">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="CancelAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2FG-xw-8bK"/>
+                                </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" 059 XXXXXXX" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fIf-oB-AX8">
+                                <rect key="frame" x="40" y="269" width="240" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="fIf-oB-AX8" secondAttribute="trailing" constant="20" id="9MP-rE-cVR"/>
                             <constraint firstItem="8d6-44-DPP" firstAttribute="top" secondItem="fIf-oB-AX8" secondAttribute="bottom" constant="37" id="MoC-wS-mCg"/>
@@ -64,17 +68,27 @@
                             <constraint firstItem="fIf-oB-AX8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="vnU-dv-JMh"/>
                             <constraint firstItem="PsC-4b-ttF" firstAttribute="top" secondItem="8d6-44-DPP" secondAttribute="bottom" constant="40" id="zJ4-is-npy"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Mnh-AJ-t4B" appends="YES" id="9Kf-ib-VkK"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Login" id="FFK-O4-c8Q"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="cancelButton" destination="PsC-4b-ttF" id="m23-1m-bmt"/>
+                        <outlet property="password" destination="8d6-44-DPP" id="vTM-xQ-1uR"/>
+                        <outlet property="phoneNumber" destination="fIf-oB-AX8" id="UUG-Ag-u32"/>
                         <outlet property="signinButton" destination="DPg-Qy-cyk" id="sHc-bV-f2B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Mnh-AJ-t4B">
+                    <connections>
+                        <action selector="touchBackground:" destination="BYZ-38-t0r" id="j1R-O2-v76"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="804" y="-196"/>
+            <point key="canvasLocation" x="981" y="-188"/>
         </scene>
         <!--List of Traders-->
         <scene sceneID="i4v-gN-xSh">
@@ -106,7 +120,7 @@
             </objects>
             <point key="canvasLocation" x="1409" y="1284"/>
         </scene>
-        <!--All Product-->
+        <!--Product-->
         <scene sceneID="Yq6-mQ-x1P">
             <objects>
                 <viewController id="y3r-NK-Uon" sceneMemberID="viewController">
@@ -119,7 +133,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="All Product" id="zKE-2f-aDQ">
+                    <navigationItem key="navigationItem" title="Product" id="zKE-2f-aDQ">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="efy-zy-IwX">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="P2T-Eg-73l">
                                 <rect key="frame" x="233" y="7" width="71" height="30"/>
@@ -329,6 +343,6 @@
         <image name="Trader" width="40" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gFc-YP-BIQ"/>
+        <segue reference="zzi-9X-CW0"/>
     </inferredMetricsTieBreakers>
 </document>
