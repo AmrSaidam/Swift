@@ -30,6 +30,7 @@
                                 <rect key="frame" x="68" y="406" width="73" height="43"/>
                                 <state key="normal" title="SingIn"/>
                                 <connections>
+                                    <action selector="sgininAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OUs-Z0-knc"/>
                                     <segue destination="YCM-pX-r6S" kind="presentation" id="8q7-k8-JA9"/>
                                 </connections>
                             </button>
@@ -78,7 +79,7 @@
                         <outlet property="cancelButton" destination="PsC-4b-ttF" id="m23-1m-bmt"/>
                         <outlet property="password" destination="8d6-44-DPP" id="vTM-xQ-1uR"/>
                         <outlet property="phoneNumber" destination="fIf-oB-AX8" id="UUG-Ag-u32"/>
-                        <outlet property="signinButton" destination="DPg-Qy-cyk" id="sHc-bV-f2B"/>
+                        <outlet property="signinButton" destination="DPg-Qy-cyk" id="IXF-0P-UMn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

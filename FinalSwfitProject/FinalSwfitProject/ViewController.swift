@@ -8,14 +8,19 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController{
 
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var phoneNumber: UITextField!
     @IBOutlet weak var signinButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
+    var doneFlag = false
+    var login:Login?
+    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         prepareButtonDesign()
        
@@ -24,6 +29,7 @@ class ViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+       
         // Dispose of any resources that can be recreated.
     }
 
@@ -36,6 +42,21 @@ class ViewController: UIViewController {
         password.text = ""
         
     }
+    
+    @IBAction func sgininAction(sender: AnyObject) {
+        
+       login? = Login(phoneNumber: "\(phoneNumber.text)" , password: "\(password.text)")
+        NSNotificationCenter.defaultCenter().addObserver(login!, selector: Selector("login:"), name: "login", object: nil)
+        
+        if doneFlag == true
+        {
+            print("Hello")
+        }
+        
+         
+        
+    }
+    
     private func prepareButtonDesign()
     {
         cancelButton.layer.cornerRadius = 5.0
@@ -49,6 +70,15 @@ class ViewController: UIViewController {
         
     }
     
+    
+    
+    func handler(notif : NSNotification)
+    {
+        if notif.name == Constant.DONE_MESSAGE
+        {
+            doneFlag = true
+        }
+    }
 
 }
 
