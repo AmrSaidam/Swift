@@ -37,45 +37,55 @@ class Login
         request.HTTPMethod = self.method!
         request.HTTPBody = inputURL!.dataUsingEncoding(NSUTF8StringEncoding)
     
-        let userDetails:NSDictionary? = NSDictionary()
+        var userDetails:NSDictionary? = NSDictionary()
         
-        
+        print("Hello")
         NSURLSession.sharedSession().dataTaskWithRequest(request){ (data :NSData?, response: NSURLResponse?,error: NSError?) in
             
+           
             dispatch_async(dispatch_get_main_queue()){
+               
                 
-                
-                if error == nil
+                if error != nil
                 {
-                       self.NSNotificationMessage(Constant.ERROR_MESSAGE)
+                    print(error?.description)
+                       ///self.NSNotificationMessage(Constant.ERROR_MESSAGE)
                 }
                 
+                
                 do{
-               let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers)as?NSDictionary
+               let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers)as? NSDictionary
                     
                     
-                    userDetails!.setValue(json!["EID"], forKey:"userId")
-                    userDetails!.setValue("\(json!["FirstName"]) \(json!["LastName"])", forKey:"userName")
-                    userDetails!.setValue(json!["Shop_ID"], forKey:"shopID")
-                    userDetails!.setValue(json!["status"], forKey:"status")
-                    userDetails!.setValue(json!["Mobile"], forKey:"mobile")
+                    
+                    userDetails! = ["userId" : "\(json!["EID"] as? String)" ,
+                                    "userName" : "\(json!["FirstName"] as? String) \(json!["LastName"])" ,
+                                    "shopID" : "\(json!["Shop_ID"] as? String)" ,
+                                    "status" : "\(json!["status"] as? String )",
+                                    "mobile" : "\(json!["Mobile"]as? String)"]
+                    
+                    
+                   
+                    
+                    
                     
                     self.saveTempInfoInPlistFile(userDetails!)
 
-                       self.NSNotificationMessage(Constant.DONE_MESSAGE)
+                    self.NSNotificationMessage()
                     
                 
                 }catch
                 {
+                    print(error)
                    
-                    self.NSNotificationMessage(Constant.ERROR_MESSAGE)
+                  //  self.NSNotificationMessage(Constant.ERROR_MESSAGE)
                     
                 }
                 
                 }
 
         
-        }
+        }.resume()
         
         
         
@@ -92,9 +102,10 @@ class Login
         
     }
     
-    private func NSNotificationMessage(message :String)
+    
+    private func NSNotificationMessage()
     {
-        NSNotificationCenter.defaultCenter().postNotificationName(message,object: nil)
+        NSNotificationCenter.defaultCenter().postNotificationName("login",object: nil)
     }
 
 }

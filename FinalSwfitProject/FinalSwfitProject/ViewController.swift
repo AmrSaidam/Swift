@@ -23,6 +23,8 @@ class ViewController: UIViewController{
         
         
         prepareButtonDesign()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.handler(_:)), name: "login", object: nil)
        
     // Do any additional setup after loading the view, typically from a nib.
     }
@@ -44,13 +46,15 @@ class ViewController: UIViewController{
     }
     
     @IBAction func sgininAction(sender: AnyObject) {
+        print("before")
+       login = Login(phoneNumber: "\(phoneNumber.text)" , password: "\(password.text)")
+        login!.login()
         
-       login? = Login(phoneNumber: "\(phoneNumber.text)" , password: "\(password.text)")
-        NSNotificationCenter.defaultCenter().addObserver(login!, selector: Selector("login:"), name: "login", object: nil)
+         print("fter")
         
         if doneFlag == true
         {
-            print("Hello")
+            print("Helloworld")
         }
         
          
@@ -72,12 +76,16 @@ class ViewController: UIViewController{
     
     
     
-    func handler(notif : NSNotification)
+    func handler(notif : NSNotification) ->Void
     {
-        if notif.name == Constant.DONE_MESSAGE
-        {
+        
+        let mainViewController  = self.storyboard!.instantiateViewControllerWithIdentifier("MainViewController") as! MainViewController
+        
+        self.presentViewController(mainViewController, animated: true, completion: nil)
+        
             doneFlag = true
-        }
+        
+        
     }
 
 }

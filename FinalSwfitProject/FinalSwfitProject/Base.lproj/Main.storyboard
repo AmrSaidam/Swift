@@ -31,7 +31,6 @@
                                 <state key="normal" title="SingIn"/>
                                 <connections>
                                     <action selector="sgininAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OUs-Z0-knc"/>
-                                    <segue destination="YCM-pX-r6S" kind="presentation" id="8q7-k8-JA9"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="spatial" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="PsC-4b-ttF">
@@ -237,10 +236,10 @@
             </objects>
             <point key="canvasLocation" x="2503" y="525"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main View Controller-->
         <scene sceneID="lkF-kC-Dae">
             <objects>
-                <tabBarController id="YCM-pX-r6S" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainViewController" id="YCM-pX-r6S" customClass="MainViewController" customModule="FinalSwfitProject" customModuleProvider="target" sceneMemberID="viewController">
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="ffC-2l-QIO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
