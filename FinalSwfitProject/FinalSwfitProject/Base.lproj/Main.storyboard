@@ -108,7 +108,7 @@
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dKD-Lc-jHL">
                                 <rect key="frame" x="233" y="7" width="71" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Logout"/>
+                                <state key="normal" title="Log Out"/>
                                 <connections>
                                     <action selector="logoutAction:" destination="5Kr-5N-vbA" eventType="touchUpInside" id="Bht-LF-kVt"/>
                                 </connections>
@@ -138,7 +138,7 @@
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="P2T-Eg-73l">
                                 <rect key="frame" x="233" y="7" width="71" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Logout"/>
+                                <state key="normal" title="Log Out"/>
                                 <connections>
                                     <action selector="logoutAction:" destination="y3r-NK-Uon" eventType="touchUpInside" id="mi3-pN-TvP"/>
                                 </connections>
@@ -223,7 +223,7 @@
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="zvO-Qa-Kmw">
                                 <rect key="frame" x="233" y="7" width="71" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Logout"/>
+                                <state key="normal" title="Log Out"/>
                                 <connections>
                                     <action selector="logoutAction:" destination="GEt-9p-qYM" eventType="touchUpInside" id="1mE-i0-Byp"/>
                                 </connections>

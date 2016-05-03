@@ -122,7 +122,6 @@
 				0273D6341CCCD2A5001EF577 /* Assets.xcassets */,
 				0273D6361CCCD2A5001EF577 /* LaunchScreen.storyboard */,
 				0273D6391CCCD2A5001EF577 /* Info.plist */,
-				02DA0ED31CD25DAC0091FA20 /* MainViewController.swift */,
 			);
 			path = FinalSwfitProject;
 			sourceTree = "<group>";
@@ -157,6 +156,7 @@
 		02DD92F21CD90223001549EF /* MainViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				02DA0ED31CD25DAC0091FA20 /* MainViewController.swift */,
 				02DD92F01CD90214001549EF /* BarcodeViewController.swift */,
 				02DD92EC1CD8FE07001549EF /* ProductViewController.swift */,
 				02DD92EE1CD901EC001549EF /* TradersViewController.swift */,
