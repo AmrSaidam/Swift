@@ -10,7 +10,8 @@
 
 class Constant
 {
+     static let WRONG_VALIDATION = "UserName or Password is wrong, please try again"
      static let DONE_MESSAGE = "DONE"
-     static let ERROR_MESSAGE = "ERROR"
+     static let ERROR_MESSAGE = "Something went wrong during login operation, please try again later"
 
     }

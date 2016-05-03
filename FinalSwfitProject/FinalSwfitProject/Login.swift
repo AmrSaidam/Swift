@@ -21,6 +21,7 @@ class Login
     
     init(phoneNumber : String , password :String)
     {
+        
         self.phoneNumber = phoneNumber;
         self.password = password;
         self.urlPath = "http://localhost/API-SWIFT/scripts/userSignIn.php";
@@ -48,37 +49,46 @@ class Login
                 
                 if error != nil
                 {
-                    print(error?.description)
-                       ///self.NSNotificationMessage(Constant.ERROR_MESSAGE)
+                    self.NSNotificationMessage(Constant.ERROR_MESSAGE)
                 }
                 
                 
+                
                 do{
+                   
                let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers)as? NSDictionary
-                    
-                    
-                    
-                    userDetails! = ["userId" : "\(json!["EID"] as? String)" ,
-                                    "userName" : "\(json!["FirstName"] as? String) \(json!["LastName"])" ,
-                                    "shopID" : "\(json!["Shop_ID"] as? String)" ,
-                                    "status" : "\(json!["status"] as? String )",
-                                    "mobile" : "\(json!["Mobile"]as? String)"]
                     
                     
                    
                     
                     
+                     if "\(json!["status"]!)" == "200" {
+                        
                     
-                    self.saveTempInfoInPlistFile(userDetails!)
-
-                    self.NSNotificationMessage()
+                    userDetails! = ["userId" : "\(json!["EID"]!)" ,
+                                    "userName" : "\(json!["FirstName"]!) \(json!["LastName"]!)" ,
+                                    "shopID" : "\(json!["Shop_ID"]!)" ,
+                                    "status" : "\(json!["status"]!)",
+                                    "mobile" : "\(json!["Mobile"]!)"]
+                    
+                      self.saveTempInfoInPlistFile(userDetails!)
+                      self.NSNotificationMessage(Constant.DONE_MESSAGE)
+                   
+                    
+                     }else
+                     {
+                        self.NSNotificationMessage(Constant.WRONG_VALIDATION)
+                    }
+                    
+                    
                     
                 
                 }catch
                 {
-                    print(error)
-                   
-                  //  self.NSNotificationMessage(Constant.ERROR_MESSAGE)
+                    
+                    self.NSNotificationMessage(Constant.ERROR_MESSAGE)
+                  
+                  
                     
                 }
                 
@@ -103,9 +113,9 @@ class Login
     }
     
     
-    private func NSNotificationMessage()
+    private func NSNotificationMessage(message : String)
     {
-        NSNotificationCenter.defaultCenter().postNotificationName("login",object: nil)
+        NSNotificationCenter.defaultCenter().postNotificationName("login",object: message)
     }
 
 }

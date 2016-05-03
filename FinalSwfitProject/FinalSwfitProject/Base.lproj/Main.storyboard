@@ -9,7 +9,7 @@
         <!--Login-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FinalSwfitProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="FinalSwfitProject" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -45,7 +45,7 @@
                                     <action selector="CancelAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2FG-xw-8bK"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" 059 XXXXXXX" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fIf-oB-AX8">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fIf-oB-AX8">
                                 <rect key="frame" x="40" y="269" width="240" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -93,7 +93,7 @@
         <!--List of Traders-->
         <scene sceneID="i4v-gN-xSh">
             <objects>
-                <viewController id="5Kr-5N-vbA" sceneMemberID="viewController">
+                <viewController id="5Kr-5N-vbA" customClass="TradersViewController" customModule="FinalSwfitProject" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="k1P-Dd-y70"/>
                         <viewControllerLayoutGuide type="bottom" id="ZlU-S6-4qu"/>
@@ -110,7 +110,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Logout"/>
                                 <connections>
-                                    <segue destination="U4q-GZ-UNl" kind="presentation" id="sEd-v7-VaB"/>
+                                    <action selector="logoutAction:" destination="5Kr-5N-vbA" eventType="touchUpInside" id="Bht-LF-kVt"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -123,7 +123,7 @@
         <!--Product-->
         <scene sceneID="Yq6-mQ-x1P">
             <objects>
-                <viewController id="y3r-NK-Uon" sceneMemberID="viewController">
+                <viewController id="y3r-NK-Uon" customClass="ProductViewController" customModule="FinalSwfitProject" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wB2-ja-fWg"/>
                         <viewControllerLayoutGuide type="bottom" id="NPv-IQ-MJ7"/>
@@ -140,7 +140,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Logout"/>
                                 <connections>
-                                    <segue destination="U4q-GZ-UNl" kind="presentation" id="zzi-9X-CW0"/>
+                                    <action selector="logoutAction:" destination="y3r-NK-Uon" eventType="touchUpInside" id="mi3-pN-TvP"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -148,12 +148,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iBH-GD-FdF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2503" y="-196"/>
+            <point key="canvasLocation" x="2396" y="-196"/>
         </scene>
         <!--Input Form-->
         <scene sceneID="lCn-4p-6yb">
             <objects>
-                <viewController id="GEt-9p-qYM" sceneMemberID="viewController">
+                <viewController id="GEt-9p-qYM" customClass="BarcodeViewController" customModule="FinalSwfitProject" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vta-Nv-Aw1"/>
                         <viewControllerLayoutGuide type="bottom" id="pQr-6z-qxw"/>
@@ -225,9 +225,12 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Logout"/>
                                 <connections>
-                                    <segue destination="U4q-GZ-UNl" kind="presentation" id="gFc-YP-BIQ"/>
+                                    <action selector="logoutAction:" destination="GEt-9p-qYM" eventType="touchUpInside" id="1mE-i0-Byp"/>
                                 </connections>
                             </button>
+                            <connections>
+                                <action selector="logoutAction:" destination="GEt-9p-qYM" id="JpG-Zd-ANY"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -342,7 +345,4 @@
         <image name="Products" width="40" height="40"/>
         <image name="Trader" width="40" height="40"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="zzi-9X-CW0"/>
-    </inferredMetricsTieBreakers>
 </document>

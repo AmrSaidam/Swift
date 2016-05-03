@@ -46,18 +46,18 @@ class ViewController: UIViewController{
     }
     
     @IBAction func sgininAction(sender: AnyObject) {
-        print("before")
-       login = Login(phoneNumber: "\(phoneNumber.text)" , password: "\(password.text)")
-        login!.login()
+       
         
-         print("fter")
         
-        if doneFlag == true
+        if phoneNumber.text == "" || password.text == ""
         {
-            print("Helloworld")
+            
+            PrintMessage.alertMessages(self, title: "Warnning", message: "Missing Required fields, please fill all required fields ")
+        }else{
+       login = Login(phoneNumber: "\(phoneNumber.text!)" , password: "\(password.text!)")
+        login!.login()
         }
         
-         
         
     }
     
@@ -79,11 +79,18 @@ class ViewController: UIViewController{
     func handler(notif : NSNotification) ->Void
     {
         
+        if notif.object as! String == Constant.DONE_MESSAGE {
+        
         let mainViewController  = self.storyboard!.instantiateViewControllerWithIdentifier("MainViewController") as! MainViewController
-        
         self.presentViewController(mainViewController, animated: true, completion: nil)
+            
+            NSNotificationCenter.defaultCenter().removeObserver(self)
         
-            doneFlag = true
+        }else
+        {
+            PrintMessage.alertMessages(self, title: "Warnning", message: notif.object as! String)
+            password.text = ""
+        }
         
         
     }

@@ -17,6 +17,10 @@
 		0273D64E1CCCD2A5001EF577 /* FinalSwfitProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0273D64D1CCCD2A5001EF577 /* FinalSwfitProjectUITests.swift */; };
 		02A171411CD51910009E6C4C /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A171401CD51910009E6C4C /* Constant.swift */; };
 		02DA0ED41CD25DAC0091FA20 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DA0ED31CD25DAC0091FA20 /* MainViewController.swift */; };
+		02DD92EB1CD8FA07001549EF /* Logout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DD92EA1CD8FA07001549EF /* Logout.swift */; };
+		02DD92ED1CD8FE07001549EF /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DD92EC1CD8FE07001549EF /* ProductViewController.swift */; };
+		02DD92EF1CD901EC001549EF /* TradersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DD92EE1CD901EC001549EF /* TradersViewController.swift */; };
+		02DD92F11CD90214001549EF /* BarcodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DD92F01CD90214001549EF /* BarcodeViewController.swift */; };
 		02FC63CA1CD25C3F00D89EA0 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FC63C91CD25C3F00D89EA0 /* Login.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +58,10 @@
 		0273D64F1CCCD2A5001EF577 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02A171401CD51910009E6C4C /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		02DA0ED31CD25DAC0091FA20 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		02DD92EA1CD8FA07001549EF /* Logout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logout.swift; sourceTree = "<group>"; };
+		02DD92EC1CD8FE07001549EF /* ProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductViewController.swift; path = ../ProductViewController.swift; sourceTree = "<group>"; };
+		02DD92EE1CD901EC001549EF /* TradersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TradersViewController.swift; sourceTree = "<group>"; };
+		02DD92F01CD90214001549EF /* BarcodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarcodeViewController.swift; sourceTree = "<group>"; };
 		02FC63C91CD25C3F00D89EA0 /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,6 +113,7 @@
 		0273D62C1CCCD2A5001EF577 /* FinalSwfitProject */ = {
 			isa = PBXGroup;
 			children = (
+				02DD92F21CD90223001549EF /* MainViewControllers */,
 				02A1713F1CD518FC009E6C4C /* Constant */,
 				02FC63C81CD25C0800D89EA0 /* CheckingPkg */,
 				0273D62D1CCCD2A5001EF577 /* AppDelegate.swift */,
@@ -145,10 +154,21 @@
 			name = Constant;
 			sourceTree = "<group>";
 		};
+		02DD92F21CD90223001549EF /* MainViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				02DD92F01CD90214001549EF /* BarcodeViewController.swift */,
+				02DD92EC1CD8FE07001549EF /* ProductViewController.swift */,
+				02DD92EE1CD901EC001549EF /* TradersViewController.swift */,
+			);
+			name = MainViewControllers;
+			sourceTree = "<group>";
+		};
 		02FC63C81CD25C0800D89EA0 /* CheckingPkg */ = {
 			isa = PBXGroup;
 			children = (
 				02FC63C91CD25C3F00D89EA0 /* Login.swift */,
+				02DD92EA1CD8FA07001549EF /* Logout.swift */,
 			);
 			name = CheckingPkg;
 			sourceTree = "<group>";
@@ -289,7 +309,11 @@
 				0273D6301CCCD2A5001EF577 /* ViewController.swift in Sources */,
 				02A171411CD51910009E6C4C /* Constant.swift in Sources */,
 				0273D62E1CCCD2A5001EF577 /* AppDelegate.swift in Sources */,
+				02DD92EF1CD901EC001549EF /* TradersViewController.swift in Sources */,
 				02DA0ED41CD25DAC0091FA20 /* MainViewController.swift in Sources */,
+				02DD92ED1CD8FE07001549EF /* ProductViewController.swift in Sources */,
+				02DD92EB1CD8FA07001549EF /* Logout.swift in Sources */,
+				02DD92F11CD90214001549EF /* BarcodeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
