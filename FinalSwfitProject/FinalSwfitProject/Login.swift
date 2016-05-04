@@ -40,7 +40,7 @@ class Login
     
         var userDetails:NSDictionary? = NSDictionary()
         
-        print("Hello")
+        
         NSURLSession.sharedSession().dataTaskWithRequest(request){ (data :NSData?, response: NSURLResponse?,error: NSError?) in
             
            
@@ -105,6 +105,7 @@ class Login
     private func saveTempInfoInPlistFile(dictionary : NSDictionary)
     {
     
+        
         let tempDirectory = NSTemporaryDirectory()
         let tempPath = NSURL(fileURLWithPath: tempDirectory)
         let tempURL = tempPath.URLByAppendingPathComponent("userInfo.pilst")

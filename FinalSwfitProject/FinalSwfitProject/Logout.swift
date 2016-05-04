@@ -14,7 +14,7 @@ class Logout {
     {
         let tempDirectory = NSTemporaryDirectory()
         let tempPath = NSURL(fileURLWithPath: tempDirectory)
-        let tempURL = tempPath.URLByAppendingPathComponent("userInfo.pilst")
+        let tempURL = tempPath.URLByAppendingPathComponent(Constant.FILE_NAME)
         print(tempURL)
         do{
         let fileManage = NSFileManager.defaultManager()
