@@ -22,6 +22,7 @@ class ShowTraders{
         self.urlPath = "http://localhost/API-SWIFT/scripts/listOfTrader.php";
         self.method = "POST"
         self.inputURL = "uid=\(userID)"
+        
     }
 
     
@@ -60,13 +61,10 @@ class ShowTraders{
                     //print("\(json!)")
                     if "\(json!["status"]!)" == "200" {
                         
-                        
+                     
                         userDetails! = json! as NSDictionary
-                            
-                        
-                        
-                        
-                       
+                        let temp  = userDetails! as! NSMutableDictionary
+                        temp.removeObjectForKey("status")
                         self.NSNotificationMessage(userDetails!)
                         
                         

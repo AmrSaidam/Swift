@@ -102,26 +102,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tKz-N7-gCp">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="s2z-bG-ktY">
                                 <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" id="R4f-Fk-baR">
-                                    <rect key="frame" x="0.0" y="64" width="320" height="20"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                </activityIndicatorView>
                                 <connections>
-                                    <outlet property="dataSource" destination="5Kr-5N-vbA" id="jkZ-FP-vS7"/>
-                                    <outlet property="delegate" destination="5Kr-5N-vbA" id="KRP-m1-MkG"/>
+                                    <outlet property="dataSource" destination="5Kr-5N-vbA" id="Hql-aW-Z3l"/>
+                                    <outlet property="delegate" destination="5Kr-5N-vbA" id="Z9J-Br-yU6"/>
                                 </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="tKz-N7-gCp" secondAttribute="trailing" constant="-20" id="7CJ-Lk-vfe"/>
-                            <constraint firstItem="tKz-N7-gCp" firstAttribute="top" secondItem="k1P-Dd-y70" secondAttribute="bottom" id="OEu-oK-DXi"/>
-                            <constraint firstItem="ZlU-S6-4qu" firstAttribute="top" secondItem="tKz-N7-gCp" secondAttribute="bottom" id="nTk-Ad-2MF"/>
-                            <constraint firstItem="tKz-N7-gCp" firstAttribute="leading" secondItem="K0g-yI-oOa" secondAttribute="leadingMargin" constant="-20" id="pLx-Ag-k9a"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="List of Traders" id="uL3-0j-bBy">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="tLh-Sp-PJI">
@@ -136,7 +126,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="progressBar" destination="R4f-Fk-baR" id="a6L-DZ-kcE"/>
+                        <outlet property="tradersTableView" destination="s2z-bG-ktY" id="gCc-nW-HCj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y7c-TL-Cd2" userLabel="First Responder" sceneMemberID="firstResponder"/>

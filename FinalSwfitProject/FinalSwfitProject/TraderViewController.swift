@@ -11,9 +11,10 @@ import UIKit
 class TradersViewController: UIViewController , UITableViewDataSource, UITableViewDelegate{
     var showTrader:ShowTraders?
     var traders:NSDictionary?
+     let simpleTableIdentifier = "SimpleTableIdentifier"
     
-    
-    @IBOutlet weak var progressBar: UIActivityIndicatorView!
+    @IBOutlet weak var tradersTableView: UITableView!
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,27 +36,26 @@ class TradersViewController: UIViewController , UITableViewDataSource, UITableVi
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-//    
-//    func tableView(tableView: UITableView,
-//                   numberOfRowsInSection section: Int) -> Int {
-//        return traders!.count > 0 : traders!.count ? 0
-//    }
-//    
-//    
-//    func tableView(tableView: UITableView,
-//                   cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//        var cell = tableView.dequeueReusableCellWithIdentifier("sd")
-//        if (cell == nil) {
-//            cell = UITableViewCell(
-//                style: UITableViewCellStyle.Default,
-//                reuseIdentifier: "df")
-//        }
-//        cell?.textLabel?.text = traders![indexPath.row]!["FirstName"]
-//        return cell!
-//    }
-//    
     
-
+    func tableView(tableView: UITableView,
+                   numberOfRowsInSection section: Int) -> Int {
+        return traders == nil ? 0: traders!.count
+    }
+    
+    
+    func tableView(tableView: UITableView,
+                   cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell = tableView.dequeueReusableCellWithIdentifier(simpleTableIdentifier)
+        if (cell == nil) {
+            cell = UITableViewCell(
+                style: UITableViewCellStyle.Default,
+                reuseIdentifier: simpleTableIdentifier)
+        }
+      
+        cell?.textLabel?.text = traders!.allValues[indexPath.row]["trader"]!!["FirstName"]!! as! String
+        return cell!
+    }
+    
     
     @IBAction func logoutAction(sender: AnyObject) {
         
@@ -84,9 +84,13 @@ class TradersViewController: UIViewController , UITableViewDataSource, UITableVi
     
     func handler (notification : NSNotification) ->Void
     {
-        if notification.object as! String == Constant.ERROR_MESSAGE
-        {
+        
+       if !notification.isEqual(Constant.ERROR_MESSAGE)
+      {
             traders = notification.object as! NSDictionary
-        }
+            self.tradersTableView.reloadData()
+    
+        print("\(traders!.allValues[1]["trader"]!!["FirstName"]!!)")
+       }
     }
 }
