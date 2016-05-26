@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		021C40CC1CD7BF3600080807 /* PrintMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021C40CB1CD7BF3600080807 /* PrintMessage.swift */; };
+		022ACEA11CF71A72004347CA /* TraderCustomCellTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022ACEA01CF71A72004347CA /* TraderCustomCellTable.swift */; };
+		022ACEA31CF74B03004347CA /* BarcodeOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022ACEA21CF74B03004347CA /* BarcodeOperation.swift */; };
 		023CEBA31CDA660A00F62A16 /* TraderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023CEBA21CDA660A00F62A16 /* TraderViewController.swift */; };
 		0273D62E1CCCD2A5001EF577 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0273D62D1CCCD2A5001EF577 /* AppDelegate.swift */; };
 		0273D6301CCCD2A5001EF577 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0273D62F1CCCD2A5001EF577 /* ViewController.swift */; };
@@ -44,6 +46,8 @@
 
 /* Begin PBXFileReference section */
 		021C40CB1CD7BF3600080807 /* PrintMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrintMessage.swift; sourceTree = "<group>"; };
+		022ACEA01CF71A72004347CA /* TraderCustomCellTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TraderCustomCellTable.swift; sourceTree = "<group>"; };
+		022ACEA21CF74B03004347CA /* BarcodeOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarcodeOperation.swift; sourceTree = "<group>"; };
 		023CEBA21CDA660A00F62A16 /* TraderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TraderViewController.swift; sourceTree = "<group>"; };
 		0273D62A1CCCD2A5001EF577 /* FinalSwfitProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalSwfitProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0273D62D1CCCD2A5001EF577 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +129,8 @@
 				0273D6361CCCD2A5001EF577 /* LaunchScreen.storyboard */,
 				0273D6391CCCD2A5001EF577 /* Info.plist */,
 				02F099651CDA3739002C47A7 /* ShowTraders.swift */,
+				022ACEA01CF71A72004347CA /* TraderCustomCellTable.swift */,
+				022ACEA21CF74B03004347CA /* BarcodeOperation.swift */,
 			);
 			path = FinalSwfitProject;
 			sourceTree = "<group>";
@@ -310,6 +316,7 @@
 				02FC63CA1CD25C3F00D89EA0 /* Login.swift in Sources */,
 				021C40CC1CD7BF3600080807 /* PrintMessage.swift in Sources */,
 				0273D6301CCCD2A5001EF577 /* ViewController.swift in Sources */,
+				022ACEA31CF74B03004347CA /* BarcodeOperation.swift in Sources */,
 				023CEBA31CDA660A00F62A16 /* TraderViewController.swift in Sources */,
 				02F099661CDA3739002C47A7 /* ShowTraders.swift in Sources */,
 				02A171411CD51910009E6C4C /* Constant.swift in Sources */,
@@ -318,6 +325,7 @@
 				02DD92ED1CD8FE07001549EF /* ProductViewController.swift in Sources */,
 				02DD92EB1CD8FA07001549EF /* Logout.swift in Sources */,
 				02DD92F11CD90214001549EF /* BarcodeViewController.swift in Sources */,
+				022ACEA11CF71A72004347CA /* TraderCustomCellTable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

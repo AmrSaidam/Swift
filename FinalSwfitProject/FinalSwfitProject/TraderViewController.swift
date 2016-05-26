@@ -6,6 +6,7 @@
 //  Copyright © 2016 iug. All rights reserved.
 //
 
+
 import UIKit
 
 class TradersViewController: UIViewController , UITableViewDataSource, UITableViewDelegate{
@@ -18,7 +19,6 @@ class TradersViewController: UIViewController , UITableViewDataSource, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.handler(_:)), name: "traders", object: nil)
         
         showTrader = ShowTraders()
@@ -45,15 +45,16 @@ class TradersViewController: UIViewController , UITableViewDataSource, UITableVi
     
     func tableView(tableView: UITableView,
                    cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier(simpleTableIdentifier)
-        if (cell == nil) {
-            cell = UITableViewCell(
-                style: UITableViewCellStyle.Default,
-                reuseIdentifier: simpleTableIdentifier)
-        }
-      
-        cell?.textLabel?.text = traders!.allValues[indexPath.row]["trader"]!!["FirstName"]!! as! String
-        return cell!
+        let cell = tableView.dequeueReusableCellWithIdentifier("TraderCell", forIndexPath: indexPath) as! TraderCustomCellTable
+        
+      cell.traderImage.image = UIImage(named:"TraderIcon")
+       cell.traderName.text = traders!.allValues[indexPath.row]["trader"]!!["FirstName"]!! as! String
+       cell.traderPhoneNumber.text  = "Phone Number : \(traders!.allValues[indexPath.row]["trader"]!!["Mobile"]!! as! String)"
+        
+//
+//        cell?.trderImage.image =         cell?.textLabel?.text = traders!.allValues[indexPath.row]["trader"]!!["FirstName"]!! as! String
+//        cell?.detailTextLabel?.text = "Phone Number : \(traders!.allValues[indexPath.row]["trader"]!!["Mobile"]!! as! String)"
+        return cell
     }
     
     
@@ -90,7 +91,7 @@ class TradersViewController: UIViewController , UITableViewDataSource, UITableVi
             traders = notification.object as! NSDictionary
             self.tradersTableView.reloadData()
     
-        print("\(traders!.allValues[1]["trader"]!!["FirstName"]!!)")
+        print("\(traders!.allValues[1]["trader"])")
        }
     }
 }
