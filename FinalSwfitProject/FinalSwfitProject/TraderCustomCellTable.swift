@@ -30,5 +30,4 @@ class TraderCustomCellTable: UITableViewCell {
     }
     
    
-
 }

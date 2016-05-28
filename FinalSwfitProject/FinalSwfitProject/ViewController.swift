@@ -22,7 +22,7 @@ class ViewController: UIViewController{
         super.viewDidLoad()
         
         
-        prepareButtonDesign()
+     // prepareButtonDesign()
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.handler(_:)), name: "login", object: nil)
        

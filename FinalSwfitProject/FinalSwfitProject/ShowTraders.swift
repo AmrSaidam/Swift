@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ShowTraders{
+class ShowTraders : StrategyClass{
     
     private var urlPath:String?
     private var method:String?
@@ -56,12 +56,12 @@ class ShowTraders{
                     let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers)as? NSDictionary
                     
                     
-                    
+                    print("\(json!["status"]!)")
                     
                     //print("\(json!)")
                     if "\(json!["status"]!)" == "200" {
                         
-                     
+                     print("OPOPOPOPOPOPOOPOPOP1")
                         userDetails! = json! as NSDictionary
                         let temp  = userDetails! as! NSMutableDictionary
                         temp.removeObjectForKey("status")
@@ -70,7 +70,8 @@ class ShowTraders{
                         
                     }else
                     {
-                        self.NSNotificationMessage(Constant.WRONG_VALIDATION)
+                        self.NSNotificationMessage(Constant.EMPTY_TRADER_LIST)
+                        print("OPOPOPOPOPOPOOPOPOP")
                     }
                     
                     
@@ -78,7 +79,7 @@ class ShowTraders{
                     
                 }catch
                 {
-                    
+                     print("OPOPOPOPOPOPOOPOPOP2")
                     self.NSNotificationMessage(Constant.ERROR_MESSAGE)
                     
                     
@@ -102,7 +103,6 @@ class ShowTraders{
         let directory = NSTemporaryDirectory()
         let temporaryPath = NSURL(fileURLWithPath: directory)
         let temporaryFile = temporaryPath.URLByAppendingPathComponent(Constant.FILE_NAME)
-        //let path = NSBundle.mainBundle().pathForResource("userInfo", ofType: "plist")
         let file  = NSDictionary(contentsOfURL: temporaryFile)
         return "\(file!["userId"]!)"
         
@@ -112,5 +112,13 @@ class ShowTraders{
     private func NSNotificationMessage(content:NSObject)
     {
         NSNotificationCenter.defaultCenter().postNotificationName("traders",object: content)
+    }
+    
+    
+    func fetchProductDetails(barcodeNumber:String)
+    {
+        //this method is implemented here to confirm StrategyProtocol
+        print("This methods is not used Here ")
+
     }
 }

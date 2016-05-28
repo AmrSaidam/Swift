@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BarcodeOperation {
+class BarcodeOperation :StrategyClass {
     
     
     private var urlPath:String?
@@ -57,7 +57,7 @@ class BarcodeOperation {
                     
                     let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers)as? NSDictionary
                     
-                    
+                    print("\(json)")
                     
                     
                     //print("\(json!)")
@@ -72,7 +72,7 @@ class BarcodeOperation {
                         
                     }else
                     {
-                        self.NSNotificationMessage(Constant.WRONG_VALIDATION)
+                        self.NSNotificationMessage(Constant.PRODUCT_NOT_FOUND)
                     }
                     
                     
@@ -103,7 +103,6 @@ class BarcodeOperation {
         let directory = NSTemporaryDirectory()
         let temporaryPath = NSURL(fileURLWithPath: directory)
         let temporaryFile = temporaryPath.URLByAppendingPathComponent(Constant.FILE_NAME)
-        //let path = NSBundle.mainBundle().pathForResource("userInfo", ofType: "plist")
         let file  = NSDictionary(contentsOfURL: temporaryFile)
         return "\(file!["shopID"]!)"
         
@@ -114,5 +113,13 @@ class BarcodeOperation {
         NSNotificationCenter.defaultCenter().postNotificationName("barcode",object: content)
     }
 
+
+    func fetchAllTraders()
+    {
+        
+    //this method is implemented here to confirm StrategyProtocol
+        print("This methods is not used here ")
+    }
+    
 
 }

@@ -18,16 +18,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="11266238_817373755015334_1647037403465423684_o" translatesAutoresizingMaskIntoConstraints="NO" id="BYh-sF-BNa">
-                                <rect key="frame" x="52" y="162" width="217" height="243"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="11266238_817373755015334_1647037403465423684_o" translatesAutoresizingMaskIntoConstraints="NO" id="BYh-sF-BNa">
+                                <rect key="frame" x="66" y="191" width="189" height="185"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="BYh-sF-BNa" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="142" id="48n-LD-5t7"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="BYh-sF-BNa" secondAttribute="bottom" constant="163" id="8LE-5P-Rm8"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="BYh-sF-BNa" secondAttribute="trailing" constant="31" id="SaO-iF-005"/>
-                            <constraint firstItem="BYh-sF-BNa" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="32" id="yuf-i5-ifJ"/>
+                            <constraint firstItem="BYh-sF-BNa" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="171" id="KNY-Wj-NQY"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="BYh-sF-BNa" secondAttribute="bottom" constant="192" id="ch1-6u-VlJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BYh-sF-BNa" secondAttribute="trailing" constant="45" id="w17-lw-hHT"/>
+                            <constraint firstItem="BYh-sF-BNa" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="46" id="yyg-Mr-jhI"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

@@ -9,6 +9,8 @@
 import AVFoundation
 import UIKit
 
+
+
 class BarcodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDelegate {
 
     @IBOutlet weak var notificationLabel: UILabel!
@@ -23,7 +25,7 @@ class BarcodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDele
     @IBOutlet weak var productAmount: UITextField!
     override func viewDidLoad() {
                super.viewDidLoad()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.handler(_:)), name: "barcode", object: nil)
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.handler(_:)), name: "barcode", object: nil)
         
         barcodeOperation = BarcodeOperation()
         barcodeOperation?.fetchProductDetails("5555555555")
@@ -144,15 +146,17 @@ class BarcodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDele
 //    }
     func handler (notification : NSNotification) ->Void
     {
-        
-        if !notification.isEqual(Constant.ERROR_MESSAGE) && !notification.isEqual(Constant.WRONG_VALIDATION)
+        if (notification.object!.isEqual(Constant.PRODUCT_NOT_FOUND) == false) &&   (notification.object!.isEqual(Constant.ERROR_MESSAGE) == false)
         {
              print("\(notification.object)")
-            var traders = notification.object as! NSDictionary
+            let traders = notification.object as! NSDictionary
             barcodeShowOperation(traders.allValues[0]["product"]!!["Name"] as! String , price: traders.allValues[0]["product"]!!["SingleUnitPrice"] as! String)
             //self.tradersTableView.reloadData()
             
            
+        }else
+        {
+            PrintMessage.alertMessages(self, title: "Warning", message: Constant.PRODUCT_NOT_FOUND)
         }
     }
     
@@ -166,4 +170,6 @@ class BarcodeViewController: UIViewController,AVCaptureMetadataOutputObjectsDele
         notificationLabel.hidden = false
     }
 
+  
+    
 }

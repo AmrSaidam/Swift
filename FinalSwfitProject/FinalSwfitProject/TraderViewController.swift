@@ -19,6 +19,7 @@ class TradersViewController: UIViewController , UITableViewDataSource, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.handler(_:)), name: "traders", object: nil)
         
         showTrader = ShowTraders()
@@ -81,17 +82,19 @@ class TradersViewController: UIViewController , UITableViewDataSource, UITableVi
      // Pass the selected object to the new view controller.
      }
      */
-    
-    
+         
     func handler (notification : NSNotification) ->Void
     {
         
-       if !notification.isEqual(Constant.ERROR_MESSAGE)
-      {
+       if (notification.object!.isEqual(Constant.EMPTY_TRADER_LIST) == false) &&   (notification.object!.isEqual(Constant.ERROR_MESSAGE) == false) {
+        print(notification.object)
             traders = notification.object as! NSDictionary
             self.tradersTableView.reloadData()
     
         print("\(traders!.allValues[1]["trader"])")
-       }
+       }else
+       {
+        PrintMessage.alertMessages(self, title: "Warning", message: Constant.EMPTY_TRADER_LIST)
+        }
     }
 }

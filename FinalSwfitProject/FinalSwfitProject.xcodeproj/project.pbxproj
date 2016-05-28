@@ -18,6 +18,7 @@
 		0273D6381CCCD2A5001EF577 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0273D6361CCCD2A5001EF577 /* LaunchScreen.storyboard */; };
 		0273D6431CCCD2A5001EF577 /* FinalSwfitProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0273D6421CCCD2A5001EF577 /* FinalSwfitProjectTests.swift */; };
 		0273D64E1CCCD2A5001EF577 /* FinalSwfitProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0273D64D1CCCD2A5001EF577 /* FinalSwfitProjectUITests.swift */; };
+		029167501CF9B46300255C2F /* StrategyClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0291674F1CF9B46200255C2F /* StrategyClass.swift */; };
 		02A171411CD51910009E6C4C /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A171401CD51910009E6C4C /* Constant.swift */; };
 		02DA0ED41CD25DAC0091FA20 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DA0ED31CD25DAC0091FA20 /* MainViewController.swift */; };
 		02DD92EB1CD8FA07001549EF /* Logout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DD92EA1CD8FA07001549EF /* Logout.swift */; };
@@ -62,6 +63,7 @@
 		0273D6491CCCD2A5001EF577 /* FinalSwfitProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinalSwfitProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0273D64D1CCCD2A5001EF577 /* FinalSwfitProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalSwfitProjectUITests.swift; sourceTree = "<group>"; };
 		0273D64F1CCCD2A5001EF577 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0291674F1CF9B46200255C2F /* StrategyClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrategyClass.swift; sourceTree = "<group>"; };
 		02A171401CD51910009E6C4C /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		02DA0ED31CD25DAC0091FA20 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		02DD92EA1CD8FA07001549EF /* Logout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logout.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 		0273D62C1CCCD2A5001EF577 /* FinalSwfitProject */ = {
 			isa = PBXGroup;
 			children = (
+				029167511CF9BF9600255C2F /* OperationAndStructure */,
 				02DD92F21CD90223001549EF /* MainViewControllers */,
 				02A1713F1CD518FC009E6C4C /* Constant */,
 				02FC63C81CD25C0800D89EA0 /* CheckingPkg */,
@@ -128,9 +131,6 @@
 				0273D6341CCCD2A5001EF577 /* Assets.xcassets */,
 				0273D6361CCCD2A5001EF577 /* LaunchScreen.storyboard */,
 				0273D6391CCCD2A5001EF577 /* Info.plist */,
-				02F099651CDA3739002C47A7 /* ShowTraders.swift */,
-				022ACEA01CF71A72004347CA /* TraderCustomCellTable.swift */,
-				022ACEA21CF74B03004347CA /* BarcodeOperation.swift */,
 			);
 			path = FinalSwfitProject;
 			sourceTree = "<group>";
@@ -151,6 +151,17 @@
 				0273D64F1CCCD2A5001EF577 /* Info.plist */,
 			);
 			path = FinalSwfitProjectUITests;
+			sourceTree = "<group>";
+		};
+		029167511CF9BF9600255C2F /* OperationAndStructure */ = {
+			isa = PBXGroup;
+			children = (
+				022ACEA21CF74B03004347CA /* BarcodeOperation.swift */,
+				022ACEA01CF71A72004347CA /* TraderCustomCellTable.swift */,
+				0291674F1CF9B46200255C2F /* StrategyClass.swift */,
+				02F099651CDA3739002C47A7 /* ShowTraders.swift */,
+			);
+			name = OperationAndStructure;
 			sourceTree = "<group>";
 		};
 		02A1713F1CD518FC009E6C4C /* Constant */ = {
@@ -320,6 +331,7 @@
 				023CEBA31CDA660A00F62A16 /* TraderViewController.swift in Sources */,
 				02F099661CDA3739002C47A7 /* ShowTraders.swift in Sources */,
 				02A171411CD51910009E6C4C /* Constant.swift in Sources */,
+				029167501CF9B46300255C2F /* StrategyClass.swift in Sources */,
 				0273D62E1CCCD2A5001EF577 /* AppDelegate.swift in Sources */,
 				02DA0ED41CD25DAC0091FA20 /* MainViewController.swift in Sources */,
 				02DD92ED1CD8FE07001549EF /* ProductViewController.swift in Sources */,
