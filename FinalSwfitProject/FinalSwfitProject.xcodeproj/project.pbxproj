@@ -22,9 +22,12 @@
 		02A171411CD51910009E6C4C /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A171401CD51910009E6C4C /* Constant.swift */; };
 		02DA0ED41CD25DAC0091FA20 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DA0ED31CD25DAC0091FA20 /* MainViewController.swift */; };
 		02DD92EB1CD8FA07001549EF /* Logout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DD92EA1CD8FA07001549EF /* Logout.swift */; };
-		02DD92ED1CD8FE07001549EF /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DD92EC1CD8FE07001549EF /* ProductViewController.swift */; };
 		02DD92F11CD90214001549EF /* BarcodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DD92F01CD90214001549EF /* BarcodeViewController.swift */; };
 		02F099661CDA3739002C47A7 /* ShowTraders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F099651CDA3739002C47A7 /* ShowTraders.swift */; };
+		02F6FA961CFB65BB005D8EC9 /* RunBarcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F6FA951CFB65BB005D8EC9 /* RunBarcode.swift */; };
+		02F6FA981CFB7333005D8EC9 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F6FA971CFB7333005D8EC9 /* ProductViewController.swift */; };
+		02F6FA9A1CFB736B005D8EC9 /* ShowProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F6FA991CFB736B005D8EC9 /* ShowProducts.swift */; };
+		02F6FA9C1CFB7378005D8EC9 /* ProductCustomCellTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F6FA9B1CFB7378005D8EC9 /* ProductCustomCellTable.swift */; };
 		02FC63CA1CD25C3F00D89EA0 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FC63C91CD25C3F00D89EA0 /* Login.swift */; };
 /* End PBXBuildFile section */
 
@@ -67,9 +70,12 @@
 		02A171401CD51910009E6C4C /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		02DA0ED31CD25DAC0091FA20 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		02DD92EA1CD8FA07001549EF /* Logout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logout.swift; sourceTree = "<group>"; };
-		02DD92EC1CD8FE07001549EF /* ProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductViewController.swift; path = ../ProductViewController.swift; sourceTree = "<group>"; };
 		02DD92F01CD90214001549EF /* BarcodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarcodeViewController.swift; sourceTree = "<group>"; };
 		02F099651CDA3739002C47A7 /* ShowTraders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowTraders.swift; sourceTree = "<group>"; };
+		02F6FA951CFB65BB005D8EC9 /* RunBarcode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunBarcode.swift; sourceTree = "<group>"; };
+		02F6FA971CFB7333005D8EC9 /* ProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
+		02F6FA991CFB736B005D8EC9 /* ShowProducts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowProducts.swift; sourceTree = "<group>"; };
+		02F6FA9B1CFB7378005D8EC9 /* ProductCustomCellTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCustomCellTable.swift; sourceTree = "<group>"; };
 		02FC63C91CD25C3F00D89EA0 /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -156,6 +162,9 @@
 		029167511CF9BF9600255C2F /* OperationAndStructure */ = {
 			isa = PBXGroup;
 			children = (
+				02F6FA951CFB65BB005D8EC9 /* RunBarcode.swift */,
+				02F6FA9B1CFB7378005D8EC9 /* ProductCustomCellTable.swift */,
+				02F6FA991CFB736B005D8EC9 /* ShowProducts.swift */,
 				022ACEA21CF74B03004347CA /* BarcodeOperation.swift */,
 				022ACEA01CF71A72004347CA /* TraderCustomCellTable.swift */,
 				0291674F1CF9B46200255C2F /* StrategyClass.swift */,
@@ -176,9 +185,9 @@
 		02DD92F21CD90223001549EF /* MainViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				02F6FA971CFB7333005D8EC9 /* ProductViewController.swift */,
 				02DA0ED31CD25DAC0091FA20 /* MainViewController.swift */,
 				02DD92F01CD90214001549EF /* BarcodeViewController.swift */,
-				02DD92EC1CD8FE07001549EF /* ProductViewController.swift */,
 				023CEBA21CDA660A00F62A16 /* TraderViewController.swift */,
 			);
 			name = MainViewControllers;
@@ -261,6 +270,7 @@
 				TargetAttributes = {
 					0273D6291CCCD2A5001EF577 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 8V7393YVYF;
 					};
 					0273D63D1CCCD2A5001EF577 = {
 						CreatedOnToolsVersion = 7.3;
@@ -326,15 +336,18 @@
 			files = (
 				02FC63CA1CD25C3F00D89EA0 /* Login.swift in Sources */,
 				021C40CC1CD7BF3600080807 /* PrintMessage.swift in Sources */,
+				02F6FA9A1CFB736B005D8EC9 /* ShowProducts.swift in Sources */,
 				0273D6301CCCD2A5001EF577 /* ViewController.swift in Sources */,
+				02F6FA981CFB7333005D8EC9 /* ProductViewController.swift in Sources */,
 				022ACEA31CF74B03004347CA /* BarcodeOperation.swift in Sources */,
 				023CEBA31CDA660A00F62A16 /* TraderViewController.swift in Sources */,
 				02F099661CDA3739002C47A7 /* ShowTraders.swift in Sources */,
 				02A171411CD51910009E6C4C /* Constant.swift in Sources */,
+				02F6FA961CFB65BB005D8EC9 /* RunBarcode.swift in Sources */,
 				029167501CF9B46300255C2F /* StrategyClass.swift in Sources */,
+				02F6FA9C1CFB7378005D8EC9 /* ProductCustomCellTable.swift in Sources */,
 				0273D62E1CCCD2A5001EF577 /* AppDelegate.swift in Sources */,
 				02DA0ED41CD25DAC0091FA20 /* MainViewController.swift in Sources */,
-				02DD92ED1CD8FE07001549EF /* ProductViewController.swift in Sources */,
 				02DD92EB1CD8FA07001549EF /* Logout.swift in Sources */,
 				02DD92F11CD90214001549EF /* BarcodeViewController.swift in Sources */,
 				022ACEA11CF71A72004347CA /* TraderCustomCellTable.swift in Sources */,
@@ -479,10 +492,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FinalSwfitProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = iug.FinalSwfitProject;
+				PRODUCT_BUNDLE_IDENTIFIER = com.AmrSaidam;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -490,10 +506,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FinalSwfitProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = iug.FinalSwfitProject;
+				PRODUCT_BUNDLE_IDENTIFIER = com.AmrSaidam;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

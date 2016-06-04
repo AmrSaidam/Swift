@@ -1,14 +1,15 @@
 //
-//  ShowTraders.swift
+//  RunBarcode.swift
 //  FinalSwfitProject
 //
-//  Created by i219pc11 on 5/4/16.
+//  Created by i219pc11 on 5/29/16.
 //  Copyright © 2016 iug. All rights reserved.
 //
 
 import UIKit
 
-class ShowTraders : StrategyClass{
+class RunBarcode :StrategyClass{
+    
     
     private var urlPath:String?
     private var method:String?
@@ -18,22 +19,23 @@ class ShowTraders : StrategyClass{
     
     init()
     {
-        let userID = returnUserId()
-        self.urlPath = "http://localhost/API-SWIFT/scripts/listOfTrader.php";
+        let shopId = returnShopId()
+        self.urlPath = "http://localhost/API-SWIFT/scripts/msgBarcode.php";
         self.method = "POST"
-        self.inputURL = "uid=\(userID)"
+        self.inputURL = "shopid=\(shopId)"
+        //print("shop id is \(inputURL)")
         
     }
-
     
     
-    func fetchAllTraders()
+    func SaleDone(barcodeNumber:String)
     {
+        let completeURL:String? = "\(inputURL!)&barcodeid=\(barcodeNumber)"
         
         let url = NSURL(string: self.urlPath!);
         let request = NSMutableURLRequest(URL:url!)
         request.HTTPMethod = self.method!
-        request.HTTPBody = inputURL!.dataUsingEncoding(NSUTF8StringEncoding)
+        request.HTTPBody = completeURL!.dataUsingEncoding(NSUTF8StringEncoding)
         
         var userDetails:NSDictionary? = NSDictionary()
         
@@ -55,23 +57,19 @@ class ShowTraders : StrategyClass{
                     
                     let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers)as? NSDictionary
                     
+                    print("\(json)")
                     
-                    print("\(json!["status"]!)")
                     
                     //print("\(json!)")
                     if "\(json!["status"]!)" == "200" {
                         
-                     print("OPOPOPOPOPOPOOPOPOP1")
-                        userDetails! = json! as NSDictionary
-                        let temp  = userDetails! as! NSMutableDictionary
-                        temp.removeObjectForKey("status")
-                        self.NSNotificationMessage(userDetails!)
+                        
+                       self.NSNotificationMessage(Constant.PRODUCT_NOT_FOUND)
                         
                         
                     }else
                     {
-                        self.NSNotificationMessage(Constant.EMPTY_TRADER_LIST)
-                        print("OPOPOPOPOPOPOOPOPOP")
+                        self.NSNotificationMessage("\(json!["message"]!)")
                     }
                     
                     
@@ -79,7 +77,7 @@ class ShowTraders : StrategyClass{
                     
                 }catch
                 {
-                     print("OPOPOPOPOPOPOOPOPOP2")
+                    
                     self.NSNotificationMessage(Constant.ERROR_MESSAGE)
                     
                     
@@ -92,35 +90,39 @@ class ShowTraders : StrategyClass{
             }.resume()
         
         
-
+        
         
     }
     
-    
-    private func returnUserId() -> String
+    private func returnShopId() -> String
     {
         
         let directory = NSTemporaryDirectory()
         let temporaryPath = NSURL(fileURLWithPath: directory)
         let temporaryFile = temporaryPath.URLByAppendingPathComponent(Constant.FILE_NAME)
         let file  = NSDictionary(contentsOfURL: temporaryFile)
-        return "\(file!["userId"]!)"
+        return "\(file!["shopID"]!)"
         
     }
-
     
     private func NSNotificationMessage(content:NSObject)
     {
-        NSNotificationCenter.defaultCenter().postNotificationName("traders",object: content)
+        NSNotificationCenter.defaultCenter().postNotificationName("barcode2",object: content)
     }
     
     
+    func fetchAllTraders()
+    {
+        
+        //this method is implemented here to confirm StrategyProtocol
+        print("This methods is not used here ")
+    }
     func fetchProductDetails(barcodeNumber:String)
     {
+        
         //this method is implemented here to confirm StrategyProtocol
-        print("This methods is not used Here ")
-
+        print("This methods is not used here ")
     }
-    func SaleDone(barcodeNumber:String)
-    {}
+
+
 }

@@ -14,6 +14,7 @@ class TradersViewController: UIViewController , UITableViewDataSource, UITableVi
     var traders:NSDictionary?
      let simpleTableIdentifier = "SimpleTableIdentifier"
     
+    
     @IBOutlet weak var tradersTableView: UITableView!
    
     

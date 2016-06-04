@@ -36,14 +36,14 @@ class Login
         let url = NSURL(string: self.urlPath!);
         let request = NSMutableURLRequest(URL:url!)
         request.HTTPMethod = self.method!
-        request.HTTPBody = inputURL!.dataUsingEncoding(NSUTF8StringEncoding)
+       request.HTTPBody = inputURL!.dataUsingEncoding(NSUTF8StringEncoding)
     
         var userDetails:NSDictionary? = NSDictionary()
-        
-        
-        NSURLSession.sharedSession().dataTaskWithRequest(request){ (data :NSData?, response: NSURLResponse?,error: NSError?) in
+      
+
+        NSURLSession.sharedSession().dataTaskWithRequest(request){ (data :NSData?, response:NSURLResponse?,error: NSError?) in
             
-           
+           print("request is  \(request) \n")
             dispatch_async(dispatch_get_main_queue()){
                
                 
@@ -52,20 +52,21 @@ class Login
                     self.NSNotificationMessage(Constant.ERROR_MESSAGE)
                 }
                 
-                
+                print("response is \(response)\n\n\n\n ad data \(data )\n\n\n\n")
                 
                 do{
-                   
-               let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers)as? NSDictionary
+                   print("*************##### and Erorr is \(data)")
+                    let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers) as? NSDictionary
                     
                     
-                   
                     
                     
+                
+                    print("json\(json)")
                      if "\(json!["status"]!)" == "200" {
-                        
+
                     
-                    userDetails! = ["userId" : "\(json!["EID"]!)" ,
+                     userDetails! = ["userId" : "\(json!["EID"]!)" ,
                                     "userName" : "\(json!["FirstName"]!) \(json!["LastName"]!)" ,
                                     "shopID" : "\(json!["Shop_ID"]!)" ,
                                     "status" : "\(json!["status"]!)",
@@ -85,6 +86,7 @@ class Login
                 
                 }catch
                 {
+                    print("the error is ####$#$\(error)")
                     
                     self.NSNotificationMessage(Constant.ERROR_MESSAGE)
                   

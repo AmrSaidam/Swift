@@ -11,5 +11,6 @@ import UIKit
 protocol StrategyClass{
     func fetchAllTraders()
     func fetchProductDetails(barcodeNumber:String)
+    func SaleDone(barcodeNumber:String)
 
 }

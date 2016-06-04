@@ -120,6 +120,8 @@ class BarcodeOperation :StrategyClass {
     //this method is implemented here to confirm StrategyProtocol
         print("This methods is not used here ")
     }
+    func SaleDone(barcodeNumber:String)
+    {}
     
 
 }

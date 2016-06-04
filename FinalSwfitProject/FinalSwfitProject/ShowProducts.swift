@@ -1,34 +1,43 @@
 //
-//  ShowTraders.swift
+//  ShowProducts.swift
 //  FinalSwfitProject
 //
-//  Created by i219pc11 on 5/4/16.
+//  Created by i319mac4 on 5/26/16.
 //  Copyright © 2016 iug. All rights reserved.
 //
 
 import UIKit
 
-class ShowTraders : StrategyClass{
+class ShowProducts {
     
-    private var urlPath:String?
-    private var method:String?
+    private var method : String?
     private var inputURL:String?
+    private var urlPath:String?
+    private var ShopID : String?
+    private var shopID : String?
     
+    init(){
+        self.urlPath = "http://localhost:80/API-SWIFT/scripts/listOfProduct.php";
+        self.method = "POST";
+        self.ShopID = self.returnShopId()
+        print("shopID = \(shopID)")
+        self.inputURL = "shopid=\(ShopID!)"
+    }
     
-    
-    init()
+    func returnShopId() -> String
     {
-        let userID = returnUserId()
-        self.urlPath = "http://localhost/API-SWIFT/scripts/listOfTrader.php";
-        self.method = "POST"
-        self.inputURL = "uid=\(userID)"
+        
+        let directory = NSTemporaryDirectory()
+        let temporaryPath = NSURL(fileURLWithPath: directory)
+        let temporaryFile = temporaryPath.URLByAppendingPathComponent(Constant.FILE_NAME)
+        //let path = NSBundle.mainBundle().pathForResource("userInfo", ofType: "plist")
+        let file  = NSDictionary(contentsOfURL: temporaryFile)
+        
+        return "\(file!["shopID"]!)"
         
     }
-
     
-    
-    func fetchAllTraders()
-    {
+    func getListOfProduct(){
         
         let url = NSURL(string: self.urlPath!);
         let request = NSMutableURLRequest(URL:url!)
@@ -37,7 +46,6 @@ class ShowTraders : StrategyClass{
         
         var userDetails:NSDictionary? = NSDictionary()
         
-        print("Hello")
         NSURLSession.sharedSession().dataTaskWithRequest(request){ (data :NSData?, response: NSURLResponse?,error: NSError?) in
             
             
@@ -56,22 +64,24 @@ class ShowTraders : StrategyClass{
                     let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers)as? NSDictionary
                     
                     
-                    print("\(json!["status"]!)")
+                    print("%%%%%%%%%%%%%%\(json)")
                     
-                    //print("\(json!)")
                     if "\(json!["status"]!)" == "200" {
                         
-                     print("OPOPOPOPOPOPOOPOPOP1")
                         userDetails! = json! as NSDictionary
                         let temp  = userDetails! as! NSMutableDictionary
                         temp.removeObjectForKey("status")
                         self.NSNotificationMessage(userDetails!)
                         
                         
+                        
+                        // self.saveTempInfoInPlistFile(userDetails!)
+                        self.NSNotificationMessage(userDetails!)
+                        
+                        
                     }else
                     {
-                        self.NSNotificationMessage(Constant.EMPTY_TRADER_LIST)
-                        print("OPOPOPOPOPOPOOPOPOP")
+                        self.NSNotificationMessage(Constant.WRONG_VALIDATION)
                     }
                     
                     
@@ -79,7 +89,7 @@ class ShowTraders : StrategyClass{
                     
                 }catch
                 {
-                     print("OPOPOPOPOPOPOOPOPOP2")
+                    print("erorr is \(error) ")
                     self.NSNotificationMessage(Constant.ERROR_MESSAGE)
                     
                     
@@ -92,35 +102,23 @@ class ShowTraders : StrategyClass{
             }.resume()
         
         
-
+    }
+    
+    private func saveTempInfoInPlistFile(dictionary : NSDictionary)
+    {
+        
+        
+        let tempDirectory = NSTemporaryDirectory()
+        let tempPath = NSURL(fileURLWithPath: tempDirectory)
+        let tempURL = tempPath.URLByAppendingPathComponent("userInfo.pilst")
+        dictionary.writeToURL(tempURL, atomically: true)
         
     }
     
     
-    private func returnUserId() -> String
+    private func NSNotificationMessage(message : NSObject)
     {
-        
-        let directory = NSTemporaryDirectory()
-        let temporaryPath = NSURL(fileURLWithPath: directory)
-        let temporaryFile = temporaryPath.URLByAppendingPathComponent(Constant.FILE_NAME)
-        let file  = NSDictionary(contentsOfURL: temporaryFile)
-        return "\(file!["userId"]!)"
-        
-    }
-
-    
-    private func NSNotificationMessage(content:NSObject)
-    {
-        NSNotificationCenter.defaultCenter().postNotificationName("traders",object: content)
+        NSNotificationCenter.defaultCenter().postNotificationName("products",object: message)
     }
     
-    
-    func fetchProductDetails(barcodeNumber:String)
-    {
-        //this method is implemented here to confirm StrategyProtocol
-        print("This methods is not used Here ")
-
-    }
-    func SaleDone(barcodeNumber:String)
-    {}
 }

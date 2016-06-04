@@ -22,7 +22,7 @@ class ViewController: UIViewController{
         super.viewDidLoad()
         
         
-     // prepareButtonDesign()
+     prepareButtonDesign()
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.handler(_:)), name: "login", object: nil)
        
@@ -79,12 +79,13 @@ class ViewController: UIViewController{
     func handler(notif : NSNotification) ->Void
     {
         
-        if notif.object as! String == Constant.DONE_MESSAGE {
+        if (notif.object!.isEqual(Constant.WRONG_VALIDATION) == false) &&   (notif.object!.isEqual(Constant.ERROR_MESSAGE) == false) {
         
         let mainViewController  = self.storyboard!.instantiateViewControllerWithIdentifier("MainViewController") as! MainViewController
         self.presentViewController(mainViewController, animated: true, completion: nil)
             
             NSNotificationCenter.defaultCenter().removeObserver(self)
+            print("######$$#$#$#$#$#$#$")
         
         }else
         {
